@@ -34,7 +34,8 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = [
-    'chat-web-app-ankit.herokuapp.com'
+    'chat-web-app-ankit.herokuapp.com',
+    'ankit-gupta-1511.github.io'
 ]
 
 
