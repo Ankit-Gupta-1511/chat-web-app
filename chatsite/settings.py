@@ -33,7 +33,9 @@ DATABASES = {
     )
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'chat-web-app-ankit.herokuapp.com'
+]
 
 
 # Application definition
