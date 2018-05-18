@@ -10,3 +10,4 @@ h5py==2.7.1
 djangorestframework==3.8.2
 tflearn==0.3.2
 gunicorn==19.8.1
+django-cors-headers==2.2.0
