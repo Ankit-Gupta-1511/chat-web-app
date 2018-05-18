@@ -16,6 +16,7 @@ import nltk
 import pandas as pd
 import tflearn
 
+nltk.download('punkt')
 """
 Choosing a stemmer 
 """

@@ -31,6 +31,7 @@ import h5py
 import warnings
 import random
 import nltk
+nltk.download('punkt')
 """
 Choosing a stemmer 
 """
