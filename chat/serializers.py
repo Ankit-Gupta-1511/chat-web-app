@@ -1,8 +1,8 @@
 
 from rest_framework import serializers
-from .models import Input, User, Response
+from .models import Input, User, Response, Query
 
-class USerSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     """Serializer to map the USer instance into JSON format."""
     user = serializers.ReadOnlyField(source='user.username')
     class Meta:
@@ -27,4 +27,11 @@ class ResponseSerializer(serializers.ModelSerializer):
         """Meta class to map serializer's fields with the model fields."""
         model = Response
         fields = ('id', 'response', 'input_msg')
+
+class QuerySerializer(serializers.ModelSerializer):
+    """Serializer to map the Response instance into JSON format."""
+    class Meta:
+        """Meta class to map serializer's fields with the model fields."""
+        model = Query
+        fields = ('id', 'email', 'query')        
 

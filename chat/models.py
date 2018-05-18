@@ -13,3 +13,7 @@ class Input(models.Model):
 class Response(models.Model):
     input_msg = models.ForeignKey(Input, on_delete=models.CASCADE)
     response = models.CharField(max_length=200)
+
+class Query(models.Model):
+    email = models.EmailField()
+    query = models.CharField(max_length = 400)

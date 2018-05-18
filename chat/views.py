@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import InputSerializer, ResponseSerializer
+from .serializers import InputSerializer, ResponseSerializer, QuerySerializer, UserSerializer
 
 
 import json
@@ -31,7 +31,7 @@ class SendResponseView(APIView):
 class CreateUserView(APIView):
     """This class defines the create behavior of our rest api."""
     def post(self, request, format=None):
-        serializer = ResponseSerializer(data=request.data)
+        serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -51,3 +51,11 @@ class GetResponse(APIView):
             "response": response_msg
         }
         return Response(response_data, status=status.HTTP_200_OK)         
+
+class SubmitQuery(APIView):        
+    def post(self, request, format=None):
+        serializer = QuerySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
