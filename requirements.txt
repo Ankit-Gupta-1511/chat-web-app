@@ -1,8 +1,11 @@
-nltk==3.2.5
 pandas==0.22.0
-Django==2.0.3
 numpy==1.14.0
+dj_database_url==0.5.0
 tensorflow==1.8.0
+python_decouple==3.1
+nltk==3.2.5
+Django==2.0.3
+whitenoise==3.3.1
 h5py==2.7.1
 djangorestframework==3.8.2
 tflearn==0.3.2
