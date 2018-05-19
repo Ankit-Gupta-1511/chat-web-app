@@ -13,11 +13,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 class InputSerializer(serializers.ModelSerializer):
     """Serializer to map the Input instance into JSON format."""
-    user = serializers.ReadOnlyField(source='user.username')
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Input
-        fields = ('id', 'msg', 'pub_date', 'user')
+        fields = ('id', 'msg', 'pub_date')
         read_only_fields = ('pub_date')
 
 class ResponseSerializer(serializers.ModelSerializer):
