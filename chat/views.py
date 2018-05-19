@@ -58,5 +58,5 @@ class SubmitQuery(APIView):
         serializer = QuerySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response({"msg":"Thank you for adding your query:)"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
