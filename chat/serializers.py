@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         """Meta class to map serializer's fields with the model fields."""
         model = User
         fields = ('id', 'username', 'date_of_creation')
-        read_only_fields = ('date_of_creation')
+        read_only_fields = ('date_of_creation',)
 
 class InputSerializer(serializers.ModelSerializer):
     """Serializer to map the Input instance into JSON format."""
@@ -17,7 +17,7 @@ class InputSerializer(serializers.ModelSerializer):
         """Meta class to map serializer's fields with the model fields."""
         model = Input
         fields = ('id', 'msg', 'pub_date')
-        read_only_fields = ('pub_date')
+        read_only_fields = ('pub_date',)
 
 class ResponseSerializer(serializers.ModelSerializer):
     """Serializer to map the Response instance into JSON format."""
