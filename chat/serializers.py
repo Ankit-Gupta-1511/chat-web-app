@@ -21,7 +21,6 @@ class InputSerializer(serializers.ModelSerializer):
 
 class ResponseSerializer(serializers.ModelSerializer):
     """Serializer to map the Response instance into JSON format."""
-    input_msg = serializers.ReadOnlyField(source='input_msg.id')
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Response
