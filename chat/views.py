@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import InputSerializer, ResponseSerializer, QuerySerializer, UserSerializer
-
+from .bot_response import response as response
 
 import json
 
@@ -43,7 +43,7 @@ class GetResponse(APIView):
     This function is used to contact the tensorflow model to generate automatic responses
     """
     def post(self, request, format=None):
-        from .bot_response import response as response
+        
         data = request.POST
         print("incoming message is: \n")
         print(data.get("msg"))
