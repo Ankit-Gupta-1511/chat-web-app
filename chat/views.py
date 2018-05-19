@@ -16,8 +16,8 @@ class SendInputView(APIView):
         serializer = InputSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"data":serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({"error":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
 class SendResponseView(APIView):
     """This class defines the create behavior of our rest api."""
@@ -25,8 +25,8 @@ class SendResponseView(APIView):
         serializer = ResponseSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+            return Response({"data":serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({"error":serializer.errors}, status=status.HTTP_400_BAD_REQUEST) 
 
 class CreateUserView(APIView):
     """This class defines the create behavior of our rest api."""
@@ -34,8 +34,8 @@ class CreateUserView(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)      
+            return Response({"data":serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({"error":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)      
 
 
 class GetResponse(APIView):
@@ -59,4 +59,4 @@ class SubmitQuery(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response({"msg":"Thank you for adding your query:)"}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+        return Response({"error":serializer.errors}, status=status.HTTP_400_BAD_REQUEST) 
